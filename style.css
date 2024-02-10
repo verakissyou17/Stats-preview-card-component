@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+ :root {
+  --main-background-color: hsl(233, 47%, 7%);
+  --card-background-color: hsl(244, 38%, 16%);
+  --accent-color: hsl(277, 64%, 61%);
+  --main-heading-color: hsl(0, 0%, 100%);
+  --main-paragraph-color: hsla(0, 0%, 100%, 0.75);
+  --stat-heading-color: hsla(0, 0%, 100%, 0.6);
+}
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-background-color);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+main {
+  width: 90%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: row-reverse;
+  border-radius: 10px;
+  background-color: var(--card-background-color);
+}
+
+.stats-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 4.5em;
+  flex: 1;
+}
+
+.title {
+  color: var(--main-heading-color);
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+
+.title span {
+  color: hsla(277, 64%, 61%, 0.747);
+  font-family: 'Lexend Deca', sans-serif;
+  text-shadow: 2px 2px 2px solid var(--main-background-color);
+  font-weight: 700;
+}
+
+.subtitle {
+  line-height: 1.5;
+  color: var(--main-paragraph-color);
+  font-family: 'Inter', sans-serif;
+  font-size: 0,9375rem;
+  margin-bottom: 4em;
+}
+
+.text-stats-wrapper {
+  max-width: 80%;
+}
+
+.stats-wrapper--states {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.stats-wrapper--state-text h2 {
+  color: var(--main-heading-color);
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: .25em;
+}
+
+.stats-wrapper--state-text small {
+  color: var(--stat-heading-color);
+  font-family: 'Inter', sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+.stats-wrapper--state-text + .stats-wrapper--state-text {
+  margin-left: 3em;
+}
+
+.image-wrapper {
+  flex: 1;
+  position: relative;
+}
+
+.image-rollover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color);
+  opacity: .5;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.attribution { 
+  margin-top: 2em;
+  font-size: 11px; 
+  text-align: center; 
+  color: var(--stat-heading-color)
+}
+
+.attribution a { 
+  color: var(--accent-color); 
+}
+
+@media (width < 700px) {
+
+    main {
+      flex-direction: column;
+    }
+
+    img,
+    .image-rollover {
+      border-top-left-radius: 10px;
+      border-bottom-right-radius: 0;
+    }
+
+    .title {
+      font-size: 1.5rem;
+    }
+
+    .stats-wrapper {
+      padding: 1.5em;
+      text-align: center;
+    }
+
+    .text-stats-wrapper {
+      margin: 0 auto;
+    }
+
+    .stats-wrapper--states  {
+      flex-direction: column;
+    }
+
+    
+  .stats-wrapper--state-text h2 {
+    font-size: 1rem;
+  }
+
+    .stats-wrapper--state-text + .stats-wrapper--state-text {
+      margin-left: 0;
+      margin-top: 1.5em;
+  }
+}
+
